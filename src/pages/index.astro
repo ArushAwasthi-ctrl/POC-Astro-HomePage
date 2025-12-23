@@ -1,11 +1,22 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import HomeLayout from "../layouts/HomeLayout.astro";
+import Microphone from "../islands/Microphone";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<HomeLayout>
+  <section class="text-center space-y-8">
+    <h1 class="text-4xl font-bold text-white">
+      SEO-first homepage with a real-time voice experience
+    </h1>
+
+    <p class="mx-auto max-w-xl text-slate-400">
+      This POC demonstrates how a fully static, SEO-friendly page can
+      seamlessly transition into a real-time Voice AI session using
+      client islands.
+    </p>
+  </section>
+
+  <div class="mt-24 flex justify-center">
+    <Microphone client:idle />
+  </div>
+</HomeLayout>
